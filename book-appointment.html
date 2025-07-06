@@ -54,13 +54,13 @@
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("LBVZJh3W5Ua7tC1dZ");
+      emailjs.init("o57euZA1bfgABaZuG");
     })();
 
     function sendEmail(event) {
       event.preventDefault();
 
-      emailjs.sendForm('service_avoytof', 'template_7mtdpyb', '#appointment-form')
+      emailjs.sendForm('service_qa51yc6', 'template_z9g3y56', '#appointment-form')
         .then(function(response) {
           alert('✅ Appointment request sent successfully!');
           document.getElementById('appointment-form').reset();
