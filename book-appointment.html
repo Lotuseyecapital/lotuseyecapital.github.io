@@ -11,7 +11,7 @@
   <header class="top-bar">
     <div class="left-section">
       <div class="logo-ring">
-        <img src="IMG/Lotus_Eye_Capital_Logo.jpg" alt="Logo" class="logo" />
+        <img src="img/Lotus_Eye_Capital_Logo.jpg" alt="Logo" class="logo" />
       </div>
       <div class="brand-wrapper">
         <div class="brand-title">LOTUS EYE CAPITAL</div>
@@ -60,7 +60,7 @@
     function sendEmail(event) {
       event.preventDefault();
 
-      emailjs.sendForm('service_qa51yc6', 'template_z9g3y56', '#appointment-form')
+      emailjs.sendForm('service_qa51yc6', 'template_fm21fvn', '#appointment-form')
         .then(function(response) {
           alert('✅ Appointment request sent successfully!');
           document.getElementById('appointment-form').reset();
