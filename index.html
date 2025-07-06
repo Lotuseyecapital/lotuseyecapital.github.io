@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOTUS EYE CAPITAL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="top-bar">
+    <!-- Left side: Logo + Text -->
+    <div class="left-section">
+      <div class="logo-ring">
+        <!-- SVG Ring -->
+        <svg class="svg-ring" viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff6ec4">
+                <animate attributeName="stop-color" values="#ff6ec4;#4a90e2;#00ffd5;#7b61ff;#ff6ec4" dur="6s" repeatCount="indefinite"/>
+              </stop>
+              <stop offset="100%" stop-color="#4a90e2">
+                <animate attributeName="stop-color" values="#4a90e2;#00ffd5;#7b61ff;#ff6ec4;#4a90e2" dur="6s" repeatCount="indefinite"/>
+              </stop>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle cx="100" cy="100" r="75" stroke="url(#grad1)" stroke-width="5" fill="none" filter="url(#glow)">
+            <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="6s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+        <img src="IMG/Lotus_Eye_Capital_Logo.jpg" alt="Logo" class="logo"/>
+      </div>
+      <div class="brand-wrapper">
+        <div class="brand-title">LOTUS EYE CAPITAL</div>
+        <div class="slogan">SECURE TODAY. PROSPER TOMORROW</div>
+      </div>
+    </div>
+
+    <!-- Right side: Nav Buttons -->
+    <div class="nav-buttons">
+      <button onclick="window.open('book-appointment.html', '_blank')">Book Appointment</button>
+      <button onclick="scrollToReviews()">Reviews</button>
+      <button onclick="window.open('about.html', '_blank')">About Us</button>
+      <button onclick="window.open('contact.html', '_blank')">Contact Us</button>
+    </div>
+    </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">LOTUS EYE CAPITAL</h1>
+      <p class="hero-subtitle">Empowering your future with trust and vision.</p>
+      <p class="hero-text">
+        At Lotus Eye Capital, we provide comprehensive 
+        <strong>Health Insurance</strong>, <strong>Life Insurance</strong>, <strong>Motor Insurance</strong>, 
+        flexible <strong>Personal Loans</strong>, secure <strong>Investment Opportunities</strong>, 
+        tailored <strong>SIP</strong> solutions, and exclusive 
+        <strong>Personal Credit Card</strong> services.
+      </p>
+      <p class="hero-text">
+        All powered by your favorite and most trusted financial institutions — brought together in one reliable place.
+      </p>
+      <p class="hero-highlight">
+        Designed to help you <strong>grow</strong>, <strong>protect</strong>, and <strong>enjoy</strong> your wealth with confidence.
+      </p>
+      <p class="hero-tagline"><strong>Your goals, our guidance.</strong></p>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="services-container">
+      <h2 class="section-title">Products and Services We Provide</h2>
+      <p class="section-subtitle">Everything you need for a secure, successful financial future.</p>
+
+      <div class="services-grid">
+
+        <!-- Repeatable Service Blocks -->
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/health_insurance_1.jpg" alt="Health Insurance">
+          </div>
+          <div class="service-card">
+            <h3>Health Insurance</h3>
+            <p>Protect yourself and your family with trusted health coverage plans.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/lifeinsurancepolicy.png" alt="Life Insurance">
+          </div>
+          <div class="service-card">
+            <h3>Life Insurance</h3>
+            <p>Secure your loved ones' future with reliable life insurance policies.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/MotorInsurance.png" alt="Motor Insurance">
+          </div>
+          <div class="service-card">
+            <h3>Motor Insurance</h3>
+            <p>Drive worry-free with comprehensive vehicle insurance.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/Group Insurance.jpg" alt="Group Insurance">
+          </div>
+          <div class="service-card">
+            <h3>Group Insurance</h3>
+            <p>Protect your team's future with reliable group insurance coverage.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/marine.jpeg" alt="Marine Insurance">
+          </div>
+          <div class="service-card">
+            <h3>Marine Insurance</h3>
+            <p>Safeguard your cargo and voyages with trusted marine insurance solutions.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/personal_loan.jpg" alt="Personal Loan">
+          </div>
+          <div class="service-card">
+            <h3>Personal Loans</h3>
+            <p>Get flexible loan solutions tailored to your goals and needs.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/Creditcard.jpg" alt="Credit Card">
+          </div>
+          <div class="service-card">
+            <h3>Credit Cards</h3>
+            <p>Enjoy exclusive benefits and smart spending with personal credit cards.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/mutual_fund.jpg" alt="Mutual Fund">
+          </div>
+          <div class="service-card">
+            <h3>Mutual Fund</h3>
+            <p>Secure your future with smart, diversified mutual fund investments.</p>
+          </div>
+        </div>
+
+        <div class="service-wrapper">
+          <div class="image-box">
+            <img src="IMG/SIP.png" alt="SIP">
+          </div>
+          <div class="service-card">
+            <h3>SIP</h3>
+            <p>Grow your wealth steadily with SIPs and secure investment plans.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="custom-reviews-section">
+  <h2 class="section-title">What Our Customers Say</h2>
+
+  <div class="swiper styledSwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Review Slide 1 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card animated-bg">
+          <img src="https://i.pravatar.cc/80?img=52" alt="Akshat" class="review-img" />
+          <div class="review-content">
+            <h4 class="review-name">Akshat Shukla</h4>
+            <p class="review-text">Lotus Eye Capital helped me secure the perfect life insurance plan. The team is professional and transparent!</p>
+            <div class="review-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card animated-bg">
+          <img src="https://i.pravatar.cc/80?img=32" alt="Priya Mehra" class="review-img" />
+          <div class="review-content">
+            <h4 class="review-name">Priya Mehra</h4>
+            <p class="review-text">Their investment advice was a game changer for my savings strategy. Highly recommend!</p>
+            <div class="review-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">☆</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card animated-bg">
+          <img src="https://i.pravatar.cc/80?img=18" alt="Ravi Thakur" class="review-img" />
+          <div class="review-content">
+            <h4 class="review-name">Ravi Thakur</h4>
+            <p class="review-text">The SIP plan setup was smooth and extremely informative. I now feel more financially confident.</p>
+            <div class="review-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+function scrollToReviews() {
+  const section = document.querySelector('.custom-reviews-section');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    alert("Reviews section not found!");
+  }
+}
+</script>
+<!-- Submit a Review -->
+<div class="submit-review-section">
+  <h3>Share Your Experience</h3>
+    <form id="review-form">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email" required />
+    <textarea id="message" name="message" placeholder="Write your review here..." required></textarea>
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating" required>
+      <option value="5">★★★★★</option>
+      <option value="4">★★★★☆</option>
+      <option value="3">★★★☆☆</option>
+      <option value="2">★★☆☆☆</option>
+      <option value="1">★☆☆☆☆</option>
+    </select>
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
+
+<a href="https://wa.me/917588135075" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+</a>
+
+
+<!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>

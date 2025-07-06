@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment | Lotus Eye Capital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="top-bar">
+    <div class="left-section">
+      <div class="logo-ring">
+        <img src="IMG/Lotus_Eye_Capital_Logo.jpg" alt="Logo" class="logo" />
+      </div>
+      <div class="brand-wrapper">
+        <div class="brand-title">LOTUS EYE CAPITAL</div>
+        <div class="slogan">SECURE TODAY. PROSPER TOMORROW</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BOOK APPOINTMENT FORM -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title">📅 Book Your Appointment</h2>
+      <p class="about-intro">We're excited to guide your financial journey.</p>
+
+      <form id="appointment-form" onsubmit="sendEmail(event)">
+        <label for="name">🙍‍♂ Full Name</label><br />
+        <input type="text" id="name" name="user_name" required /><br /><br />
+
+        <label for="email">📧 Email Address</label><br />
+        <input type="email" id="email" name="user_email" required /><br /><br />
+
+        <label for="phone">📱 Phone Number</label><br />
+        <input type="tel" id="phone" name="user_phone" required /><br /><br />
+
+        <label for="date">📆 Preferred Date</label><br />
+        <input type="date" id="date" name="appointment_date" required /><br /><br />
+
+        <label for="time">⏰ Preferred Time</label><br />
+        <input type="time" id="time" name="appointment_time" required /><br /><br />
+
+        <label for="message">📝 Additional Notes (optional)</label><br />
+        <textarea id="message" name="message" rows="4" placeholder="Anything you'd like us to know?"></textarea><br /><br />
+
+        <button type="submit" class="cta-button">✅ Confirm Appointment</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("LBVZJh3W5Ua7tC1dZ");
+    })();
+
+    function sendEmail(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_avoytof', 'template_7mtdpyb', '#appointment-form')
+        .then(function(response) {
+          alert('✅ Appointment request sent successfully!');
+          document.getElementById('appointment-form').reset();
+        }, function(error) {
+          alert('❌ Failed to send appointment. Please check your details or try again.');
+          console.error('EmailJS Error:', error);
+        });
+    }
+  </script>
+</body>
+</html>
