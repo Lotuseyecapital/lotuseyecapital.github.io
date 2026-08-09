@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200, initial-scale=0.3, maximum-scale=1.0, user-scalable=yes">
+  <title>Book a Consultation | Lotus Eye Capital</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- FontAwesome Icons (v6.5.1) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Updated EmailJS SDK (v4) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-ticker">
+    Strategic Growth & Asset Protection Framework active for 2026. 
+    <a href="book-appointment.html">Schedule Consultation <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="top-bar">
+    <div class="header-container">
+      <a href="index.html" class="brand-section">
+        <div class="logo-box">
+          <img src="img/logo.png" alt="Firm Logo" class="logo">
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">LOTUS EYE CAPITAL</span>
+          <span class="slogan">Secure Today. Prosper Tomorrow.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Products & Services</a>
+        <a href="index.html#reviews" class="nav-link">Reviews</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="cta-wrapper">
+        <a href="book-appointment.html" class="btn-secondary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="about-hero">
+    <div class="container">
+      <span class="trust-badge"><i class="fas fa-calendar-check"></i> Private 1-on-1 Consultation</span>
+      <h1 class="hero-title">Schedule Your Meeting</h1>
+      <p class="hero-subtitle">
+        Choose a time that works best for you. Let's discuss your wealth protection and strategic growth in a completely confidential, no-obligation session.
+      </p>
+    </div>
+  </section>
+
+  <!-- Appointment Form Section -->
+  <section class="appointment-section">
+    <div class="container">
+      <div class="appointment-card">
+        
+        <div class="form-header text-center">
+          <h3>Reserve Your Preferred Time Slot</h3>
+          <p>Please fill out the details below. Our team will confirm your session shortly.</p>
+        </div>
+
+        <!-- Notification Alert Box for EmailJS Status -->
+        <div id="statusAlert" class="status-alert" style="display: none;"></div>
+
+        <!-- Appointment Form (EmailJS Compatible) -->
+        <form id="appointmentForm" class="appointment-form emailjs-form">
+          
+          <!-- Hidden Origin Identification Field -->
+          <input type="hidden" name="page_origin" value="Book Appointment Page Direct Form">
+
+          <!-- Row 1: Full Name & Email -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="user_name">Full Name *</label>
+              <input type="text" id="user_name" name="user_name" placeholder="e.g. Akshat Shukla" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="user_email">Email Address *</label>
+              <input type="email" id="user_email" name="user_email" placeholder="name@example.com" required>
+            </div>
+          </div>
+
+          <!-- Row 2: Phone Number & Reason for Contact -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="user_phone">Phone Number *</label>
+              <input type="tel" id="user_phone" name="user_phone" placeholder="+91 XXXXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+              <label for="consultation_reason">Reason for Contact *</label>
+              <select id="consultation_reason" name="subject" required>
+                <option value="" disabled selected>Select a primary topic</option>
+                <option value="Asset & Wealth Protection">Asset & Wealth Protection</option>
+                <option value="Legacy & Estate Planning">Legacy & Estate Planning</option>
+                <option value="Investment & Growth Strategy">Investment & Growth Strategy</option>
+                <option value="Business & Tax Structuring">Business & Tax Structuring</option>
+                <option value="General Financial Consultation">General Financial Consultation</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Preferred Date & Preferred Time -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="preferred_date">Preferred Date *</label>
+              <input type="date" id="preferred_date" name="pref_date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="preferred_time">Preferred Time Slot *</label>
+              <select id="preferred_time" name="pref_time" required>
+                <option value="" disabled selected>Select convenient time</option>
+                <option value="Morning (10:00 AM - 12:30 PM)">Morning (10:00 AM - 12:30 PM)</option>
+                <option value="Afternoon (02:00 PM - 04:30 PM)">Afternoon (02:00 PM - 04:30 PM)</option>
+                <option value="Evening (05:00 PM - 07:00 PM)">Evening (05:00 PM - 07:00 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 4: Additional Notes -->
+          <div class="form-group">
+            <label for="additional_notes">Additional Notes / Context</label>
+            <textarea id="additional_notes" name="message" rows="4" placeholder="Share any specific goals, questions, or details you'd like us to prepare for..."></textarea>
+          </div>
+
+          <!-- Bot Verification / Captcha Row -->
+          <div class="form-group bot-check-box">
+            <label for="captcha_input"><i class="fas fa-user-shield"></i> Human Verification: What is <span id="captchaQuestion" class="captcha-q"></span>? *</label>
+            <input type="number" id="captcha_input" placeholder="Enter answer here" required>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
+            Confirm & Book Appointment <i class="fas fa-calendar-check"></i>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EmailJS Integration & Bot Verification Script -->
+  <script>
+    let correctAnswer = 0;
+
+    // Dynamic Captcha Generator
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 9) + 1;
+      const num2 = Math.floor(Math.random() * 9) + 1;
+      correctAnswer = num1 + num2;
+      document.getElementById('captchaQuestion').innerText = `${num1} + ${num2}`;
+      document.getElementById('captcha_input').value = '';
+    }
+
+    // Initialize EmailJS
+    (function() {
+      emailjs.init("hV17-Mh-jYb0AXVAn");
+      generateCaptcha();
+    })();
+
+    // Form Submission Handler
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const btn = document.getElementById('submitBtn');
+      const statusAlert = document.getElementById('statusAlert');
+      const userCaptchaAnswer = parseInt(document.getElementById('captcha_input').value, 10);
+
+      // Verify Captcha
+      if (userCaptchaAnswer !== correctAnswer) {
+        statusAlert.className = "status-alert error";
+        statusAlert.innerHTML = "<i class='fas fa-exclamation-triangle'></i> Incorrect verification answer! Please solve the human verification check.";
+        statusAlert.style.display = "block";
+        generateCaptcha();
+        return;
+      }
+      
+      btn.disabled = true;
+      btn.innerHTML = 'Sending Details... <i class="fas fa-spinner fa-spin"></i>';
+
+      const serviceID = 'service_wgo0v99';
+      const templateID = 'template_uf5s768';
+
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          btn.disabled = false;
+          btn.innerHTML = 'Appointment Requested! <i class="fas fa-check"></i>';
+          
+          statusAlert.className = "status-alert success";
+          statusAlert.innerHTML = "<i class='fas fa-check-circle'></i> Thank you! Your appointment request has been sent successfully. We will get back to you shortly.";
+          statusAlert.style.display = "block";
+
+          document.getElementById('appointmentForm').reset();
+          generateCaptcha();
+        }, (err) => {
+          btn.disabled = false;
+          btn.innerHTML = 'Confirm & Book Appointment <i class="fas fa-calendar-check"></i>';
+
+          statusAlert.className = "status-alert error";
+          statusAlert.innerHTML = "<i class='fas fa-exclamation-circle'></i> Something went wrong while sending. Please try again or call us directly.";
+          statusAlert.style.display = "block";
+          console.error('EmailJS Error:', err);
+          generateCaptcha();
+        });
+    });
+  </script>
+
+</body>
+</html>

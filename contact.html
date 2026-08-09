@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200, initial-scale=0.3, maximum-scale=1.0, user-scalable=yes">
+  <title>Contact Us | Lotus Eye Capital</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Updated FontAwesome Icons (v6.5.1 for new X logo) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-ticker">
+    Strategic Growth & Asset Protection Framework active for 2026. 
+    <a href="book-appointment.html">Schedule Consultation <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="top-bar">
+    <div class="header-container">
+      <a href="index.html" class="brand-section">
+        <div class="logo-box">
+          <img src="img/logo.png" alt="Firm Logo" class="logo">
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">LOTUS EYE CAPITAL</span>
+          <span class="slogan">Secure Today. Prosper Tomorrow.</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Products & Services</a>
+        <a href="index.html#reviews" class="nav-link">Reviews</a>
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <div class="cta-wrapper">
+        <a href="book-appointment.html" class="btn-secondary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Hero Banner -->
+  <section class="about-hero">
+    <div class="container">
+      <span class="trust-badge"><i class="fas fa-headset"></i> We're Here For You</span>
+      <h1 class="hero-title">Let’s Start a Conversation.</h1>
+      <p class="hero-subtitle">
+        Whether you have a quick query, need advice on asset protection, or want to explore a long-term partnership — our team is always ready to talk.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="contact-main-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-form-card">
+          <div class="form-header">
+            <h3>Send Us a Direct Message</h3>
+            <p>Fill in your details below and a senior advisor will reach out to you within 2 business hours.</p>
+          </div>
+
+          <!-- Notification Alert Box for EmailJS Status -->
+          <div id="statusAlert" class="status-alert" style="display: none;"></div>
+
+          <form id="contactForm" class="contact-form emailjs-form">
+            <!-- Hidden Origin Field -->
+            <input type="hidden" name="page_origin" value="Contact Us Page Direct Form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="user_name" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="user_email" placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="user_phone" placeholder="+91 98765 43210" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">How Can We Help? *</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Asset Protection & Legacy">Asset Protection & Legacy</option>
+                  <option value="Wealth & Investment Planning">Wealth & Investment Planning</option>
+                  <option value="Book a Personal Meeting">Book a Personal Meeting</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us a little bit about what you'd like to discuss..." required></textarea>
+            </div>
+
+            <!-- Bot Verification / Captcha Row -->
+            <div class="form-group bot-check-box">
+              <label for="captcha_input"><i class="fas fa-user-shield"></i> Human Verification: What is <span id="captchaQuestion" class="captcha-q"></span>? *</label>
+              <input type="number" id="captcha_input" placeholder="Enter answer here" required>
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+        <!-- Right: Direct Touchpoints & Socials -->
+        <div class="contact-info-sidebar">
+          
+          <!-- Direct Channels Box -->
+          <div class="info-card">
+            <h3>Reach Us Directly</h3>
+            <p class="info-subtitle">Prefer phone or email? Connect with our desk directly.</p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                  <span class="info-label">Direct Client Desk</span>
+                  <a href="tel:+91-7588135075" class="info-val">+91-7588135075</a>
+                  <span class="info-sub">Mon - Sat: 9:00 AM - 7:00 PM IST</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <span class="info-label">Official Advisory Desk</span>
+                  <a href="mailto:lotuseyecapital@rediffmail.com" class="info-val">lotuseyecapital@rediffmail.com</a>
+                  <span class="info-sub">Mon - Sat: 9:00 AM - 7:00 PM IST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Connect Card with Live Handles -->
+<div class="info-card social-card">
+  <h3>Connect With Us</h3>
+  <p class="info-subtitle">Follow our market updates and strategic insights.</p>
+
+  <div class="social-links-grid">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/lotus-eye-capital-571385427" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+      <i class="fab fa-linkedin-in"></i>
+      <span>LinkedIn</span>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/YOUR-FACEBOOK-PAGE" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
+      <i class="fab fa-facebook-f"></i>
+      <span>Facebook</span>
+    </a>
+
+    <!-- X / Twitter -->
+    <a href="https://x.com/lotuseyecapital" target="_blank" rel="noopener noreferrer" class="social-btn twitter">
+      <i class="fa-brands fa-x-twitter"></i>
+      <span>X / Twitter</span>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/lotuseyecapital" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+      <i class="fab fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+  </div>
+</div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Single Dedicated Team Contact Section -->
+  <section class="team-contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DIRECT TEAM ACCESS</span>
+        <h2 class="section-title">Speak Directly With Our Advisory Team</h2>
+        <p class="section-desc">No automated bots or long waiting times. Get connected straight to our dedicated client support desk.</p>
+      </div>
+
+      <div class="single-team-wrapper">
+        <div class="team-card single-team-card">
+          <div class="team-avatar">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <h4>Dedicated Advisory Desk</h4>
+          <span class="team-role">Client Relations & Support Team</span>
+          <p class="team-desc">For direct consultations, strategy guidance, or scheduling a private 1-on-1 call with our team leads.</p>
+          <div class="team-directs horizontal-directs">
+            <a href="tel:+91-7588135075" class="btn-direct"><i class="fas fa-phone"></i> Call +91-7588135075</a>
+            <a href="mailto:lotuseyecapital@rediffmail.com" class="btn-direct outline"><i class="fas fa-envelope"></i> Email lotuseyecapital@rediffmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EmailJS Integration Script -->
+  <script>
+    let correctAnswer = 0;
+
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 9) + 1;
+      const num2 = Math.floor(Math.random() * 9) + 1;
+      correctAnswer = num1 + num2;
+      document.getElementById('captchaQuestion').innerText = `${num1} + ${num2}`;
+      document.getElementById('captcha_input').value = '';
+    }
+
+    (function() {
+      // Initialize with Public Key
+      emailjs.init("hV17-Mh-jYb0AXVAn"); // Replace with Public Key
+      generateCaptcha();
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const btn = document.getElementById('submitBtn');
+      const statusAlert = document.getElementById('statusAlert');
+      const userCaptchaAnswer = parseInt(document.getElementById('captcha_input').value, 10);
+
+      // Verify Captcha
+      if (userCaptchaAnswer !== correctAnswer) {
+        statusAlert.className = "status-alert error";
+        statusAlert.innerHTML = "<i class='fas fa-exclamation-triangle'></i> Incorrect verification answer! Please solve the human verification check.";
+        statusAlert.style.display = "block";
+        generateCaptcha();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = 'Sending Message... <i class="fas fa-spinner fa-spin"></i>';
+
+      const serviceID = 'service_wgo0v99';   // Replace with Service ID
+      const templateID = 'template_uf5s768'; // Replace with Template ID
+
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          btn.disabled = false;
+          btn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+          
+          statusAlert.className = "status-alert success";
+          statusAlert.innerHTML = "<i class='fas fa-check-circle'></i> Thank you! Your message has been sent successfully. An advisor will contact you shortly.";
+          statusAlert.style.display = "block";
+
+          document.getElementById('contactForm').reset();
+          generateCaptcha();
+        }, (err) => {
+          btn.disabled = false;
+          btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+
+          statusAlert.className = "status-alert error";
+          statusAlert.innerHTML = "<i class='fas fa-exclamation-circle'></i> Failed to send message. Please try again or call us directly.";
+          statusAlert.style.display = "block";
+          console.error('EmailJS Error:', err);
+          generateCaptcha();
+        });
+    });
+  </script>
+
+</body>
+</html>
